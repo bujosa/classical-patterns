@@ -43,7 +43,7 @@ func (c *CarBuilder) SetSeats() BuildProcess {
 }
 
 func (c *CarBuilder) SetStructure() BuildProcess {
-	c.v.Structure = " "
+	c.v.Structure = "Car"
 	return c
 }
 
@@ -67,7 +67,7 @@ func (b *BikeBuilder) SetSeats() BuildProcess {
 }
 
 func (b *BikeBuilder) SetStructure() BuildProcess {
-	b.v.Structure = " "
+	b.v.Structure = "Motorbike"
 	return b
 }
 
