@@ -17,4 +17,5 @@ func GetPaymentMethod(m int) (PaymentMethod, error) {
 }
 
 type CashPM struct{}
+
 type DebitCardPM struct{}
