@@ -17,7 +17,6 @@ func GetPaymentMethod(m int) (PaymentMethod, error) {
 }
 
 type CashPM struct{}
-
 type DebitCardPM struct{}
 
 func (c *CashPM) Pay(amount float32) string {
