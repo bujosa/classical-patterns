@@ -1,7 +1,6 @@
 package factory
 
 import (
-	"errors"
 	"fmt"
 )
 
@@ -22,7 +21,7 @@ func GetPaymentMethod(m int) (PaymentMethod, error) {
 		case DebitCard:
 			return new(DebitCardPM), nil
 		default:
-			return nil, errors.New(fmt.Sprintf("Payment Method %d not recognized\n", m))
+			return nil, fmt.Errorf("payment Method %d not recognized", m)
 	}
 }
 
