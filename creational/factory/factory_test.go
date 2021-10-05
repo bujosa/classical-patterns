@@ -30,3 +30,11 @@ func TestGetPaymentMethodDebit(t *testing.T) {
 	}
 	t.Log("LOG:", msg)
 }
+
+func TestGetPaymentMethodNonExistent(t *testing.T) {
+	_, err := GetPaymentMethod(20)
+	if err == nil {
+		t.Error("A payment method with ID 20 must return an error")
+	}
+	t.Log("LOG:", err)
+}
