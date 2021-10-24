@@ -24,13 +24,12 @@ func TestMotorbikeFactory(t *testing.T) {
 }
 
 func TestCarFactory(t *testing.T) {
-	carF, err := GetVehicleFactory(4)
+	carF, err := GetVehicleFactory(3)
 	if err != nil {
-		t.Fatal("Car factory with id 4 should not be recognized")
+		t.Fatal("Car factory with id 3 should not be recognized")
 	}
 
 	carF, err = GetVehicleFactory(CarFactoryType)
-
 	if err != nil {
 		t.Fatal(err)
 	}
