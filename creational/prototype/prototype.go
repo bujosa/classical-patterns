@@ -15,7 +15,19 @@ const (
 type ShirtsCache struct{}
 
 func (s *ShirtsCache) GetClone(m int) (ItemInfoGetter, error) {
-	return nil, fmt.Errorf("not implemented yet")
+	switch m {
+		case White:
+			newItem := *whitePrototype
+			return &newItem, nil
+		case Black:
+			newItem := *blackPrototype
+			return &newItem, nil
+		case Blue:
+			newItem := *bluePrototype
+			return &newItem, nil
+		default:
+			return nil, fmt.Errorf("Shirt model %d not recognized", m)
+	}
 }
 
 type ItemInfoGetter interface {
@@ -39,12 +51,22 @@ func GetShirtsCloner() ShirtCloner {
 	return &cache
 }
 
-func whitePrototype() *Shirt {
-	return &Shirt{
-		Price: 15.00,
-		SKU:   "empty",
-		Color: White,
-	}
+var whitePrototype *Shirt = &Shirt{
+	Price: 15.00,
+	SKU:   "empty",
+	Color: White,
+}
+
+var blackPrototype *Shirt = &Shirt{
+	Price: 16.00,
+	SKU:   "empty",
+	Color: Black,
+}
+
+var bluePrototype *Shirt = &Shirt{
+	Price: 17.00,
+	SKU:   "empty",
+	Color: Blue,
 }
 
 func (i *Shirt) GetPrice() float32 {
