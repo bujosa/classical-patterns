@@ -2,6 +2,7 @@ package abstract_factory
 
 type FamilyCar struct{}
 
+// Return door count
 func (f *FamilyCar) GetDoors() int {
 	return 5
 }
