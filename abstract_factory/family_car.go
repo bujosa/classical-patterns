@@ -6,6 +6,7 @@ func (f *FamilyCar) GetDoors() int {
 	return 5
 }
 
+// Return wheel count
 func (f *FamilyCar) GetWheels() int {
 	return 4
 }
